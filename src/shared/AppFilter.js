@@ -1,7 +1,7 @@
 import React from 'react'
-import { NavLink, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
-const Navbar = () => {
+const AppFilter = () => {
   const history = useHistory();
   const filterObj = {
     launch_success: '',
@@ -44,7 +44,7 @@ const Navbar = () => {
     history.push(`/?launch_success=${ filterObj.launch_success }&land_success=${ filterObj.land_success }&launch_year=${ filterObj.launch_year }`);
   }
   return (
-      <div className="col-xs-12 col-sm-4 col-md-4 col-lg-2">
+      <div className="col-xs-12 col-sm-4 col-md-3 col-lg-2">
           <div className="row grid-section">
               <div className="col-xs-12 grid-inner">
                   <h1><b>Filters</b></h1>
@@ -76,4 +76,4 @@ const Navbar = () => {
       </div >
   )
 }
-export default Navbar;
+export default AppFilter;

@@ -249,9 +249,9 @@ body {
   order: 1;
 }
 
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 43.75em) {
   .container {
-    width: var(--container-sm, 46rem);
+    width: var(--container-sm, 41.75rem);
   }
 
   .col-sm,
@@ -1085,8 +1085,8 @@ img {
 .clear-both {
   clear: both;
 }
-.mission-header{
-    color: #4a5798;
+.mission-header {
+  color: #4a5798;
 }
 .align-center {
   display: flex;

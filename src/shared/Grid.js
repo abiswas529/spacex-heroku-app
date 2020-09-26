@@ -56,21 +56,23 @@ class Grid extends Component {
     const { loading, repos } = this.state
 
     if (loading === true) {
-      return <div className="col-xs-12 col-sm-8 col-md-8 col-lg-10 align-center"><div className="loader"></div></div>
+      return <div className="col-xs-12 col-sm-8 col-md-10 col-lg-10 align-center"><div className="loader"></div></div>
     }
-
+    if(repos && repos.length === 0){
+      return <div className="col-xs-12 col-sm-8 col-md-10 col-lg-10 align-center"><h1>No Mission Found...</h1></div>
+    }
     return (
-        <div className="col-xs-12 col-sm-8 col-md-8 col-lg-10">
+        <div className="col-xs-12 col-sm-8 col-md-9 col-lg-10">
             <div className="row">
                 {repos.map(({ mission_name, mission_id, launch_year, launch_success, launch_landing, flight_number, links }, index) => (
-                    <div className="col-xs-12 col-sm-6 col-sm-6 col-lg-3 grid-section" key={ index }>
+                    <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3 grid-section" key={ index }>
                         <div className="grid-inner">
                             <ul>
                                 <li className="img-li"><img className="img-responsive" src={ links.mission_patch_small }></img></li>
                                 <li className="mission-header"><b>{mission_name}#{flight_number}</b></li>
                                 <li><b>Mission Ids</b>: {mission_id}</li>
                                 <li><b>Launch Year</b>: {launch_year}</li>
-                                <li><b>Successful Launch</b>: {launch_success.toString()}</li>
+                                <li><b>Successful Launch</b>: {launch_success ? launch_success.toString() : ''}</li>
                                 <li><b>Successful Land</b>: {launch_landing ? launch_landing.toString() : ''}</li>
                             </ul>
                         </div>

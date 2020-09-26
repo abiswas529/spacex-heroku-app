@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import routes from './routes'
 import { Route, Link, Redirect, Switch } from 'react-router-dom'
-import Navbar from './Navbar'
+import AppFilter from './AppFilter'
 import NoMatch from './NoMatch'
 import AppFooter from './AppFooter'
 import '../assets/CSS/normalize.css';
@@ -13,7 +13,7 @@ class App extends Component {
             <h1><b>SpaceX Launch Programs</b></h1>
             <div className="container layout">
                 <div className="row">
-                    <Navbar />
+                    <AppFilter />
 
                     <Switch>
                         {routes.map(({ path, exact, component: Component, ...rest }) => (
