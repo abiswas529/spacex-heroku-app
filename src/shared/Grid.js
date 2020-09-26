@@ -17,7 +17,7 @@ class Grid extends Component {
       loading: repos ? false : true,
     }
 
-    this.fetchRepos = this.fetchRepos.bind(this)
+    this.fetchData = this.fetchData.bind(this)
   }
   componentDidMount() {
     if (!this.state.repos) {
@@ -27,7 +27,7 @@ class Grid extends Component {
         land_success: searchParam.land_success,
         launch_year: searchParam.launch_year
       }
-      this.fetchRepos(param)
+      this.fetchData(param)
     }
   }
   componentDidUpdate(prevProps, prevState) {
@@ -38,10 +38,10 @@ class Grid extends Component {
         land_success: searchParam.land_success,
         launch_year: searchParam.launch_year
       }
-      this.fetchRepos(param)
+      this.fetchData(param)
     }
   }
-  fetchRepos(lang) {
+  fetchData(lang) {
     this.setState(() => ({
       loading: true
     }))

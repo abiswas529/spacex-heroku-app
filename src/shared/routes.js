@@ -1,12 +1,12 @@
 import Grid from './Grid'
-import { fetchPopularRepos } from './api'
+import { fetchSpaceXData } from './api'
 
 const routes = [
   {
     path: '/',
     exact: true,
     component: Grid,
-    fetchInitialData: (path = {}) => fetchPopularRepos(path)
+    fetchInitialData: (path = {}) => fetchSpaceXData(path)
   }
 ]
 
