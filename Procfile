@@ -1,1 +1,1 @@
-web: node src/server/index.js
+web: webpack && nodemon server.js
