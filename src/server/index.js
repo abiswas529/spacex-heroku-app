@@ -37,6 +37,7 @@ app.get('*', (req, res, next) => {
       <html>
         <head>
           <title>SpaceX Data</title>
+          <meta content="width=device-width, initial-scale=1" name="viewport" />
           <script src="/bundle.js" defer></script>
           <script>window.__INITIAL_DATA__ = ${ serialize(data) }</script>
         </head>
